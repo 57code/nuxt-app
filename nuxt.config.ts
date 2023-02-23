@@ -23,9 +23,9 @@ export default defineNuxtConfig({
   // experimental: {
   //   payloadExtraction: false
   // },
-  // nitro: {
-  //   preset: 'vercel'
-  // },
+  nitro: {
+    preset: 'vercel'
+  },
   // 默认vite
   // builder: 'webpack', // 需要安装依赖：@nuxt/webpack-builder
   // webpack: {},
