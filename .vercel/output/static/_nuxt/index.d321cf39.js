@@ -1,0 +1,1 @@
+import{_ as t}from"./nuxt-link.dd8747fa.js";import{a,o,b as n,e as c,w as s,F as _,f as r,h as d}from"./entry.139a88d9.js";const l={},i=r("h1",null,"Index Page",-1);function f(m,x){const e=t;return o(),n(_,null,[i,c(e,{to:"/detail"},{default:s(()=>[d("Detail Page")]),_:1})],64)}const h=a(l,[["render",f]]);export{h as default};
