@@ -20,9 +20,12 @@ export default defineNuxtConfig({
     dirs: ['store']
   },
   // ssr: false, // spa
-  // nitro: {
-  //   preset: 'vercel'
+  // experimental: {
+  //   payloadExtraction: false
   // },
+  nitro: {
+    preset: 'vercel'
+  },
   // 默认vite
   // builder: 'webpack', // 需要安装依赖：@nuxt/webpack-builder
   // webpack: {},
