@@ -26,17 +26,33 @@ useHead({
   title: route.params.id as string
 })
 
-// 获取文章id
-// const { title, content } = await $fetch(`/api/detail/${route.params.id}`)
-const fetchPost = () => $fetch(`/api/detail/${route.params.id}`)
-const { data, pending, error } = await useAsyncData(fetchPost)
-const errorMsg = computed(() => error.value as NuxtError)
-watchEffect(() => {
-  if (unref(error)) {
-    // 如果有错误对象，则展示错误页
-    showError(errorMsg.value)
+// 定义中间件守护路由
+// definePageMeta({
+//   middleware: 'auth'
+// })
+const router = useRouter()
+const store = useUser()
+
+const fetchPost = () => $fetch(`/api/detail/${route.params.id}`, {
+  headers: store.isLogin ? { token: 'atoken' } : {},
+  onResponseError({response}) {
+    if (response.status === 401) {
+      router.push('/login?callback=' + route.path)
+    }
   }
 })
+
+// 获取文章id
+// const { title, content } = await $fetch(`/api/detail/${route.params.id}`)
+
+const { data, pending, error } = await useAsyncData(fetchPost)
+const errorMsg = computed(() => error.value as NuxtError)
+// watchEffect(() => {
+//   if (unref(error)) {
+//     // 如果有错误对象，则展示错误页
+//     showError(errorMsg.value)
+//   }
+// })
 // 请求体
 // $fetch('/api/detail/', {
 //   body: {
@@ -46,9 +62,9 @@ watchEffect(() => {
 
 // 增加评论相关逻辑，注意登录状态的获取和使用
 const value = useState("comment", () => "");
-const store = useUser()
+// const store = useUser()
 const { isLogin } = storeToRefs(store)
-const router = useRouter()
+// const router = useRouter()
 const onSubmit = () => {
   if (isLogin.value) {
     // 提交留言...
