@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
+    "dayjs": "^1.11.7",
     "gray-matter": "^4.0.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2"
