@@ -4,8 +4,8 @@ export default defineNuxtConfig({
     head: {
       title: '村长的技术空间',
       meta: [
-        {name: 'description', content: '专注前端技术分享'},
-        {name: 'keywords', content: 'nuxt,vue,ts,frontend'},
+        { name: 'description', content: '专注前端技术分享' },
+        { name: 'keywords', content: 'nuxt,vue,ts,frontend' },
       ]
     }
   },
@@ -43,6 +43,14 @@ export default defineNuxtConfig({
           "storeToRefs"
         ],
       },
-    ]
-  ]
+    ],
+    '@nuxtjs/color-mode'
+    // ['@nuxtjs/color-mode', {
+    //   preference: 'dark'
+    // }]
+  ],
+  // 独立配置项
+  colorMode: {
+    preference: 'dark'
+  }
 })

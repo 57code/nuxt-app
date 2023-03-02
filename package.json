@@ -15,6 +15,7 @@
     "sass": "^1.58.3"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^3.2.0",
     "@pinia/nuxt": "^0.4.7",
     "dayjs": "^1.11.7",
     "gray-matter": "^4.0.3",
