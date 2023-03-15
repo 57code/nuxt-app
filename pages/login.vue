@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import type { FetchResult } from '~~/types/IResult'
+
 const email = useState(() => '')
-const onLogin = () => {
-  $fetch('/api/login', {
-    method: 'post',
-    body: {
-      email: email.value,
-    },
-  }).then((user) => {
-    console.log(user)
-  }).catch((err) => {
-    console.log(err)
+const Message = useMessage()
+const router = useRouter()
+
+const onLogin = async () => {
+  const { ok } = await post<FetchResult>('/api/login', {
+    email: email.value,
   })
+  if (ok) {
+    Message.success('登录成功！')
+    router.push('/')
+  }
 }
 </script>
 

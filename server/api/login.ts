@@ -16,7 +16,7 @@ export default defineEventHandler(async (e) => {
       }))
     }
 
-    return user
+    return { ok: true, data: user }
   }
   catch (error) {
     console.error(error)
