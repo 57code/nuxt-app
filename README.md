@@ -1,42 +1,50 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3.0 全栈开发
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+本项目是掘金小册《[Nuxt 3.0全栈开发](https://s.juejin.cn/ds/Sp2b7DR/)》配套代码。
 
-## Setup
+## 小册介绍
+![介绍](./public/%E4%BB%8B%E7%BB%8D.jpeg)
 
-Make sure to install the dependencies:
+## 小册内容
+这门课程共分五个模块：
 
-```bash
-# yarn
-yarn install
+![大纲](./public/%E5%A4%A7%E7%BA%B2.jpeg)
 
-# npm
-npm install
+- 模块一，将从渲染模式等基础概念出发，先扭转一些同学的固有思维，补充缺失知识；
+- 模块二，结合个人博客案例，深入学习 Nuxt3 核心特性；
+- 模块三，解决项目工程化问题，从扩展性、复用性等角度深入了解模块等框架进阶知识；
+- 模块四，将为项目实战做准备，给大家讲解全栈知识，包括数据库设计、接口设计和开发，大家会接触并掌握 Apifox、Prisma 等前端比较时髦的新工具；
+- 模块五，项目实战，我会带大家开发一个知识分享社区主题的全栈项目，包括了从接口开发，到前端开发，再到优化、部署和持续集成的全流程实战。
+相信学习完本小册，会让你深入掌握 Nuxt3 框架的同时，还能全方位提升自己的知识深度和架构水平。
 
-# pnpm
-pnpm install
-```
+## 你会学到什么？
+本课程同时具备如下优势：
 
-## Development Server
+- 案例驱动教学，核心知识点讲解将会用个人博客案例贯穿，学习基础知识同时掌握实战应用方法；
+- 全视频项目演示，每节内容均有配套代码，实战项目从设计到代码实现都有细致视频演示，同时搭配文字稿，满足各种学习需求；
+- TS 全栈开发，前后端完全使用 TypeScript 开发，补充后端知识的同时，也是一次 TS 学习实践；
+- 工程化实践，Nuxt 项目工程化搭建，多种扩展方法应用实践，自动生成数据库表数据，从开发到自动化部署全流程实战
+- 前沿技术栈，Nuxt3 + TS + Vite + Vue3 + NaiveUI + TailwindCSS + Nitro + Node.js + Prisma，给你现代化的开发流程和体验；
 
-Start the development server on http://localhost:3000
+## 你将获得：
 
-```bash
-npm run dev
-```
+- 搞清 SSR、SSG、SPA、hybrid 等渲染模式差异和选择；
+- 掌握 Nuxt3 核心用法和项目开发技巧；
+- 能够在 Nuxt 全栈开发中熟练运用 TypeScript；
+- 能完成 Nuxt 项目构建、开发和自动化部署等工程化任务；
+- 学会设计和实现接口，学会数据库设计和开发。
 
-## Production
+## 适宜人群
 
-Build the application for production:
+- 欠缺前端项目经验，想要学习如何快速、高效构建真实完整前端实战项目；
+- 没有全栈开发经验，想要对前后端知识加深理解和实战的小伙伴；
+- 对前端框架理解不够深入，想要通过项目的实战加以巩固提升；
+- 对 TS 掌握不够熟练，希望通过实际开发强化水平的小伙伴们；
+- 对于 SSR/SSG 等架构感兴趣，苦于学习资料少、理解门槛较高；
+- 对项目性能优化、SEO 等缺乏实践经验的小伙伴
 
-```bash
-npm run build
-```
+## 学习本课程需要哪些基础？
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Vue 基本语法；
+- TypeScript 基础语法；
+- Node.js 基础语法。
