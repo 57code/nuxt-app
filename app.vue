@@ -1,10 +1,16 @@
 <template>
   <div>
-    <h1 class="bg-blue-200">
-      this is a nuxt3 starter!
-    </h1>
     <NMessageProvider>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </NMessageProvider>
   </div>
 </template>
+
+<style>
+a {
+  color: white;
+  text-decoration: none;
+}
+</style>

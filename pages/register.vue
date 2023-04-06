@@ -1,26 +1,15 @@
 <script setup lang="ts">
 useHead({
-  title: '登录',
+  title: '注册',
 })
 
-// 定义页面布局
 definePageMeta({
   layout: 'blank',
 })
 </script>
 
 <template>
-  <h2 class="flex justify-between">
-    返回羊村
-    <nuxt-link to="/register">
-      <NButton quaternary type="primary" size="tiny">
-        还未入村？
-      </NButton>
-    </nuxt-link>
-  </h2>
-
-  <NAlert title="演示账号和密码为：test" type="info" class="mb-6" />
-
+  <h2>加入羊群</h2>
   <NForm ref="formRef" class="w-[340px]" size="large">
     <NFormItem :show-label="false" path="username">
       <NInput clearable placeholder="用户名" />
@@ -28,10 +17,23 @@ definePageMeta({
     <NFormItem :show-label="false" path="password">
       <NInput clearable placeholder="密码" type="password" />
     </NFormItem>
+    <NFormItem :show-label="false" path="repassword">
+      <NInput clearable placeholder="确认密码" type="password" />
+    </NFormItem>
 
     <div>
       <NButton class="w-full" type="primary">
         登录
+      </NButton>
+    </div>
+    <div class="flex justify-center items-center w-full text-xs mt-5 text-gray-600">
+      注册即同意
+      <NButton quaternary type="primary" size="tiny">
+        《服务协议》
+      </NButton>
+      和
+      <NButton quaternary type="primary" size="tiny">
+        《隐私政策》
       </NButton>
     </div>
   </NForm>
