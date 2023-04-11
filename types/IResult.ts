@@ -1,1 +1,1 @@
-export interface FetchResult { ok: boolean; data: any }
+export interface IResult { ok: boolean; data: any }

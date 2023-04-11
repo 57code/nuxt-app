@@ -1,10 +1,12 @@
 <template>
   <div>
-    <NMessageProvider>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </NMessageProvider>
+    <NDialogProvider>
+      <NMessageProvider>
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </NMessageProvider>
+    </NDialogProvider>
   </div>
 </template>
 

@@ -18,13 +18,17 @@
     "@nuxt/test-utils": "^3.2.3",
     "@unocss/nuxt": "^0.50.4",
     "eslint": "^8.36.0",
-    "nuxt": "^3.2.3",
+    "nuxt": "^3.3.3",
     "prisma": "^4.11.0",
     "typescript": "^4.9.5",
     "vitest": "^0.29.2"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
-    "@prisma/client": "^4.11.0"
+    "@prisma/client": "^4.11.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^9.0.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0"
   }
 }
