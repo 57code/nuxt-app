@@ -5,6 +5,7 @@ import { createUser, getUserByUsername } from '../database/repositories/userRepo
 
 export default defineEventHandler(async (e) => {
   try {
+    // 用户传递的参数
     const data = await readBody<User>(e)
     const { username, password } = data
     // 校验...

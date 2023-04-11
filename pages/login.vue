@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { User } from '.prisma/client';
 import type { FormInst, FormRules } from 'naive-ui'
+import { IResult } from '~/types/IResult';
 
 useHead({
   title: '登录',
@@ -10,12 +12,14 @@ definePageMeta({
   layout: 'blank',
 })
 
+// 获取表单实例用于校验
 const formRef = ref<FormInst>()
+// 数据模型
 const model = ref({
   username: '',
   password: '',
 })
-
+// 校验规则
 const rules: FormRules = {
   username: [{
     required: true,
@@ -29,12 +33,13 @@ const rules: FormRules = {
   }],
 }
 
+// 保存登录状态
 const store = useUser()
 const login = () => {
   // 校验
   formRef.value!.validate(async (errors) => {
     if (!errors) {
-      const { ok, data } = await httpPost('/api/login', {
+      const { ok, data } = await httpPost<IResult>('/api/login', {
         username: model.value.username,
         password: model.value.password,
       })

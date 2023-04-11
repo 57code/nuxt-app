@@ -6,6 +6,7 @@ const menus = ref([
   { path: '/course', label: '课程' },
 ])
 
+// 获取用户信息
 const store = useUser()
 const { userInfo } = storeToRefs(store)
 
@@ -53,12 +54,14 @@ const handleSelect = (k) => {
         </Menu>
       </div>
 
+      <!-- 如果没有登录，则显示登录按钮 -->
       <NuxtLink v-if="!userInfo" to="/login">
         <NButton secondary strong>
           登录
         </NButton>
       </NuxtLink>
 
+      <!-- 否则显示操作 -->
       <NDropdown
         v-else :options="options" @select="handleSelect"
       >
