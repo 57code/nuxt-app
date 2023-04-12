@@ -7,7 +7,7 @@ type FetchOptions = Parameters<FetchType>[1]
 export function httpRequest<T = unknown>(
   method: any,
   url: ReqType,
-  body?: any,
+  bodyOrParams?: any,
   opts?: FetchOptions,
 ) {
   const token = useCookie('token')
@@ -18,13 +18,10 @@ export function httpRequest<T = unknown>(
     method,
     // baseURL: '/api',
     headers: { token: token.value } as any,
-    body,
     onRequestError() {
       message.error('请求出错，请重试！')
     },
     onResponseError({ response }) {
-      console.log(response)
-
       switch (response.status) {
         case 400:
           message.error('参数错误')
@@ -48,7 +45,12 @@ export function httpRequest<T = unknown>(
       }
     },
   } as FetchOptions
-
+  if (defaultOpts) {
+    if (method === 'post')
+      defaultOpts.body = bodyOrParams
+    else
+      defaultOpts.params = bodyOrParams
+  }
   return $fetch<T>(url, merge(defaultOpts, opts))
 }
 
