@@ -42,7 +42,7 @@ const open = () => {
         </span>
       </div>
 
-      <span v-else>免费</span>
+      <span v-else>🌱 免费</span>
     </div>
   </NCard>
 </template>
