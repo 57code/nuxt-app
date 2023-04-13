@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { User } from '.prisma/client';
 import type { FormInst, FormRules } from 'naive-ui'
-import { IResult } from '~/types/IResult';
+import type { IResult } from '~/types/IResult'
 
 useHead({
   title: '登录',
