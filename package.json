@@ -1,5 +1,8 @@
 {
   "private": true,
+  "prisma": {
+    "seed": "ts-node server/database/seed.ts"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,7 +12,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test:unit": "vitest",
-    "migrate": "npx prisma migrate dev --name init --schema server/database/schema.prisma"
+    "migrate": "npx prisma migrate dev --name init --schema server/database/schema.prisma",
+    "seed": "npx prisma db seed"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
@@ -20,6 +24,7 @@
     "eslint": "^8.36.0",
     "nuxt": "^3.3.3",
     "prisma": "^4.11.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
     "vitest": "^0.29.2"
   },
