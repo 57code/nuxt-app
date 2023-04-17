@@ -19,7 +19,7 @@ defineProps({
   <div>
     <div class="flex mb-3">
       <span>{{ title }}</span>
-      <NButton quaternary class="ml-auto">
+      <NButton quaternary class="ml-auto" @click="navigateTo(`/list/${type}`)">
         查看更多
       </NButton>
     </div>

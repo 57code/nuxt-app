@@ -23,7 +23,7 @@ const open = () => {
   >
     <template #cover>
       <img
-        :src="data.cover"
+        :src="`/${data.cover}`"
         class="w-[100%] h-[150px]"
       >
     </template>

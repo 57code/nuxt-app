@@ -2,8 +2,8 @@
 const route = useRoute()
 const menus = ref([
   { path: '/', label: '首页' },
-  { path: '/column', label: '专栏' },
-  { path: '/course', label: '课程' },
+  { path: '/list/column', label: '专栏' },
+  { path: '/list/course', label: '课程' },
 ])
 
 // 获取用户信息

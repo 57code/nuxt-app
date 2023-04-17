@@ -8,3 +8,15 @@ export async function getNewColumns(): Promise<Column[] | null> {
   })
   return result
 }
+
+export async function getColumns({ page, size }): Promise<{ columns: Column[] | null; total: number }> {
+  const [columns, total] = await Promise.all([
+    prisma.column.findMany({
+      orderBy: { id: 'desc' },
+      skip: page * size,
+      take: size,
+    }),
+    prisma.column.count(),
+  ])
+  return { columns, total }
+}
