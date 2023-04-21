@@ -20,3 +20,12 @@ export async function getColumns({ page, size }): Promise<{ columns: Column[] | 
   ])
   return { columns, total }
 }
+
+export async function getColumnById(id: number): Promise<Column | null> {
+  const result = await prisma.column.findFirst({
+    where: {
+      id,
+    },
+  })
+  return result
+}
