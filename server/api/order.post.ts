@@ -5,12 +5,15 @@ import { getTokenInfo } from '../database/service/token'
 import { createOrder } from '../database/repositories/orderRepositor'
 
 export default defineEventHandler(async (e) => {
+  // 课程id
   const { courseId } = await readBody(e)
 
+  // 用户id
   const result = getTokenInfo(e)
   if (isNuxtError(result))
     return sendError(e, result)
 
+  // 构建订单实体
   const order = {
     courseId: Number(courseId),
     userId: result.id,

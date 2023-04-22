@@ -1,6 +1,7 @@
 import { getOrderById } from '~/server/database/repositories/orderRepositor'
 
 export default defineEventHandler(async (e) => {
+  // 获取订单id
   const id = e.context.params?.id ? parseInt(e.context.params.id) : undefined
   if (!id) {
     return sendError(e, createError({
