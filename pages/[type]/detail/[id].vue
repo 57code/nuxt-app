@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { Column, Course } from '.prisma/client'
 import type { IResult } from '~/types/IResult'
 
 const route = useRoute()
 const { id, type } = route.params
 
 const { data } = useFetch<IResult>(`/api/${type}/${id}`)
-const item = computed(() => data.value?.data.item)
+const item = computed<Course | Column | null>(() => {
+  if (data.value)
+    return data.value.data.item
+  else
+    return null
+})
 useHead({ title: item.value?.title || '详情' })
 
 const tabs = ref([{
@@ -21,8 +27,14 @@ if (type === 'course') {
   })
 }
 
-const subscribe = () => {
-  navigateTo(`/createorder?id=${id}`)
+const subscribe = async () => {
+  // 创建订单
+  const { ok, data } = await httpPost<IResult>('/api/order', { courseId: id })
+
+  if (ok) {
+    // 然后跳转订单确认页面
+    navigateTo(`/order-confirm/?id=${data.orderId}`)
+  }
 }
 </script>
 
@@ -67,11 +79,11 @@ const subscribe = () => {
           @change="curr = $event"
         />
         <div
-          v-if="curr === 'detail'"
+          v-if="curr === 'detail' && item"
           class="pt-4 pb-10 px-10 content"
-          v-html="type === 'course' ? item?.detail : item?.content"
+          v-html="type === 'course' ? (item as Course).detail : (item as Column).content"
         />
-        <Catalogue v-else :data="item.Catalogue" />
+        <Catalogue v-else-if="curr === 'catalogue' && item" :data="(item as any).Catalogue" />
       </section>
     </NGridItem>
     <NGridItem :span="6">

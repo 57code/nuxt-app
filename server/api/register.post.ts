@@ -30,7 +30,7 @@ export default defineEventHandler(async (e) => {
 
     // 生成token，写入cookie
     const secret = process.env.JSON_SECRET as string
-    const token = jwt.sign({ username: result.username }, secret, { expiresIn: '24h' })
+    const token = jwt.sign({ username: result.username, id: result.id }, secret, { expiresIn: '24h' })
     setCookie(e, 'token', token, { maxAge: 24 * 3600 })
 
     return { ok: true, data: result }
