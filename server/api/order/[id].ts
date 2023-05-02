@@ -1,4 +1,4 @@
-import { getOrderById } from '~/server/database/repositories/orderRepositor'
+import { getOrderById } from '~/server/database/repositories/orderRepository'
 
 export default defineEventHandler(async (e) => {
   // 获取订单id

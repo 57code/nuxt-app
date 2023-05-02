@@ -14,3 +14,13 @@ export async function createUser(data: User) {
   const user = await prisma.user.create({ data })
   return user
 }
+
+export async function updateUser(id, data: Partial<User>) {
+  const user = await prisma.user.update({
+    where: {
+      id,
+    },
+    data,
+  })
+  return user
+}

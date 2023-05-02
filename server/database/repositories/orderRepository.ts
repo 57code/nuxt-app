@@ -35,3 +35,24 @@ export async function updateOrder(id: number, data: Partial<Order>) {
   })
   return result
 }
+
+export async function getCoursesByUser(userId: number) {
+  const orders = await prisma.order.findMany({
+    where: {
+      userId,
+    },
+    include: {
+      course: {
+        select: {
+          id: true,
+          title: true,
+          cover: true,
+        },
+      },
+    },
+  })
+
+  const courses = orders.flatMap(order => order.course)
+  const uniqueCourses = courses.filter((course, index, arr) => arr.findIndex(c => c.id === course.id) === index)
+  return uniqueCourses
+}

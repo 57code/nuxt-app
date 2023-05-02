@@ -8,8 +8,6 @@ const props = defineProps({
 })
 
 const open = () => {
-  console.log(props.data.id)
-
   if (props.type === 'course')
     navigateTo(`/course/detail/${props.data!.id}`)
   else

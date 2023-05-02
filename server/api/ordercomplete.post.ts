@@ -1,4 +1,4 @@
-import { updateOrder } from '../database/repositories/orderRepositor'
+import { updateOrder } from '../database/repositories/orderRepository'
 
 export default defineEventHandler(async (e) => {
   const body = await readBody(e)

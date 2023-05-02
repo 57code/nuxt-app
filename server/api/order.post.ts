@@ -2,7 +2,7 @@ import type { Order } from '@prisma/client'
 import { OrderStatus } from '@prisma/client'
 import { isNuxtError } from 'nuxt/app'
 import { getTokenInfo } from '../database/service/token'
-import { createOrder } from '../database/repositories/orderRepositor'
+import { createOrder } from '../database/repositories/orderRepository'
 
 export default defineEventHandler(async (e) => {
   // 课程id
