@@ -1,4 +1,4 @@
-<!-- 用户：个人中心页面 -->
+<!-- 用户中心页面 -->
 <script setup lang="ts">
 const route = useRoute()
 const pageKey = computed(() => route.fullPath)
@@ -15,11 +15,16 @@ const menus = [{
 }]
 
 const activeName = computed(() => route.name)
+
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>
   <NGrid :x-gap="20">
     <NGridItem :span="5">
+      <!-- 导航菜单 -->
       <ul class="list-none bg-white rounded m-0 p-0">
         <li
           v-for="(item, index) in menus" :key="index"

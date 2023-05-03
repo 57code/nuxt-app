@@ -9,6 +9,10 @@ const course = computed(() => data.course)
 const confirmOrder = async () => {
   navigateTo(`/order-pay/?id=${id}`)
 }
+
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>

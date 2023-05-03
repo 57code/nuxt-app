@@ -19,6 +19,10 @@ if (process.client) {
 }
 
 const isTimeout = ref(false)
+
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>
