@@ -1,0 +1,75 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 专栏
+model Column {
+  id      Int     @id @default(autoincrement())
+  title   String
+  cover   String
+  desc    String?
+  content String? @db.Text
+}
+
+model Course {
+  id        Int              @id @default(autoincrement())
+  title     String
+  cover     String
+  price     Decimal
+  oPrice    Decimal
+  desc      String?
+  detail    String?          @db.Text
+  users     UsersOnCourses[]
+  orders    Order[]
+  Catalogue Catalogue[]
+}
+
+// 章节
+model Catalogue {
+  id       Int    @id @default(autoincrement())
+  title    String
+  source   String
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model User {
+  id       Int              @id @default(autoincrement())
+  username String           @unique
+  password String
+  nickname String?
+  avatar   String?
+  sex      String?
+  courses  UsersOnCourses[]
+  orders   Order[]
+}
+
+model UsersOnCourses {
+  user     User   @relation(fields: [userId], references: [id])
+  userId   Int
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+
+  @@id([userId, courseId])
+}
+
+model Order {
+  id        Int         @id @default(autoincrement())
+  course    Course      @relation(fields: [courseId], references: [id])
+  courseId  Int
+  user      User        @relation(fields: [userId], references: [id])
+  userId    Int
+  createdAt DateTime
+  status    OrderStatus
+}
+
+enum OrderStatus {
+  WAIT_CONFIRM
+  WAIT_PAY
+  COMPLETED
+}
