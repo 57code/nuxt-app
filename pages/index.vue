@@ -15,10 +15,11 @@ if (process.server && error.value)
 </script>
 
 <template>
+  <!-- banner -->
   <n-carousel show-arrow class="mb-6">
     <div
       v-for="item in slides" :key="item.label"
-      class="text-white w-full h-[400px] rounded cursor-pointer text-center leading-[400px]"
+      class="text-white w-full h-[150px] lg:h-[400px] rounded cursor-pointer text-center leading-[400px]"
       :style="{ backgroundColor: item.bgColor }"
     >
       {{ item.label }}
@@ -34,7 +35,3 @@ if (process.server && error.value)
     type="column"
   />
 </template>
-
-<style>
-
-</style>
