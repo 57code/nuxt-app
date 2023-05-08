@@ -1,0 +1,21 @@
+name: Publish Nuxt To HuaweiYun
+
+on:
+  push:
+    branches: [master]
+jobs:
+  PullSource:
+    runs-on: ubuntu-latest
+    name: "PullSource"
+    steps:
+      - name: Pull source
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: "123.249.115.108"
+          username: root
+          key: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            cd /root/nuxt-app
+            git checkout .
+            docker-compose down
+            docker-compose up -d --force-recreate --build
