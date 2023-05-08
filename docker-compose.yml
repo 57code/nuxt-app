@@ -24,12 +24,11 @@ services:
     container_name: nuxt_app
     restart: always
     #构建容器
-    build: .
-    #直接从git拉去
-    # build: git@github.com:su37josephxia/docker_ci.git#:backend
-    # 需要链接本地代码时
-    # volumes:
-    #   - ./backend:/usr/src/app
+    build:
+      context: .
+      # 自动输入Y防止造成编译卡死
+      args:
+        - "-y"
     ports:
       - "3004:3000"
     environment:
