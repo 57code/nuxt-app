@@ -15,7 +15,7 @@ jobs:
           username: root
           key: ${{ secrets.ACCESS_TOKEN }}
           script: |
-            cd /root/nuxt-app
+            cd /root/source/nuxt-app
             git checkout .
             docker-compose down
             docker-compose up -d --force-recreate --build
