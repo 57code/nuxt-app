@@ -8,8 +8,6 @@ WORKDIR /app
 #安装依赖
 RUN npm config set registry https://registry.npm.taobao.org/ && \    
     npm i
-# Nuxt编译
-RUN npm run build
 #对外暴露的端口
 EXPOSE 3000
 #程序启动脚本

@@ -9,6 +9,11 @@ services:
       - 3306:3306
     volumes:
       - mysql_db_data_container:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
   adminer_container:
     image: adminer:latest
     environment:
@@ -17,6 +22,7 @@ services:
       - 8080:8080
   nuxt_app_container:
     container_name: nuxt_app
+    restart: always
     #构建容器
     build: .
     #直接从git拉去
@@ -25,7 +31,7 @@ services:
     # volumes:
     #   - ./backend:/usr/src/app
     ports:
-      - "3000:3000"
+      - "3003:3000"
     environment:
       DATABASE_URL: mysql://root:rootpassword@mysql_db_container:3306/ycxt
       NUXT_BASE_URL: https://jsonplaceholder.typicode.com
@@ -33,6 +39,7 @@ services:
     command: >
       /bin/sh -c 'npm run migrate && npm run build && npm start'
     depends_on:
-      - mysql_db_container
+      mysql_db_container:
+        condition: service_healthy
 volumes:
   mysql_db_data_container:
