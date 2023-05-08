@@ -4,11 +4,7 @@ services:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     environment:
-<<<<<<< HEAD
-      MYSQL_ROOT_PASSWORD: rootpassword  # root账号密码
-=======
       MYSQL_ROOT_PASSWORD: rootpassword # root账号密码
->>>>>>> c6a88de (ci: update)
     ports:
       - 3306:3306
     volumes:
@@ -19,11 +15,6 @@ services:
       ADMINER_DEFAULT_SERVER: mysql_db_container
     ports:
       - 8080:8080
-<<<<<<< HEAD
-
-volumes:
-  mysql_db_data_container:
-=======
   nuxt_app_container:
     container_name: nuxt_app
     #构建容器
@@ -45,4 +36,3 @@ volumes:
       - mysql_db_container
 volumes:
   mysql_db_data_container:
->>>>>>> c6a88de (ci: update)
