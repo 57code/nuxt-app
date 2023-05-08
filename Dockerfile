@@ -6,9 +6,8 @@ ADD . /app/
 #进入到app目录下面，类似cd
 WORKDIR /app
 #安装依赖
-# 华为云禁止从淘宝下载
-# RUN npm config set registry https://registry.npm.taobao.org/
-RUN npm i
+RUN npm config set registry https://registry.npm.taobao.org/ && \    
+    npm i
 #对外暴露的端口
 EXPOSE 3000
 #程序启动脚本
