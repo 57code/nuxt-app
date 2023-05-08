@@ -31,7 +31,7 @@ services:
     # volumes:
     #   - ./backend:/usr/src/app
     ports:
-      - "3003:3000"
+      - "3004:3000"
     environment:
       DATABASE_URL: mysql://root:rootpassword@mysql_db_container:3306/ycxt
       NUXT_BASE_URL: https://jsonplaceholder.typicode.com
