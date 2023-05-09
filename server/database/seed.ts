@@ -5,9 +5,11 @@ async function main() {
     data: {
       title: 'Docker部署与持续集成',
       cover: 'Docker部署.png',
-      url: 'www.baidu.com',
+      url: 'https://duz.xet.tech/s/2zl8EZ',
       desc: '',
       content: ``,
+      oPrice: 299,
+      price: 199,
     },
   })
 
@@ -15,9 +17,11 @@ async function main() {
       data: {
         title: 'Node服务器端',
         cover: 'Node与服务器端.jpg',
-        url: 'www.baidu.com',
+        url: 'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62b177bae4b09baaaaef38b9?product_id=p_62b177bae4b09baaaaef38b9',
         desc: '',
         content: ``,
+        oPrice: 699,
+        price: 599,
       },
     })
 
@@ -26,8 +30,10 @@ async function main() {
         title: '前端工程化',
         cover: '前端工程化.png',
         url: 'www.baidu.com',
-        desc: '',
+        desc: 'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62b17adae4b07bd2d7b0af40?product_id=p_62b17adae4b07bd2d7b0af40',
         content: ``,
+        oPrice: 699,
+        price: 599,
       },
     })
 
@@ -35,9 +41,11 @@ async function main() {
       data: {
         title: 'Webpack优化实战',
         cover: 'webpack优化.jpeg',
-        url: 'www.baidu.com',
+        url: 'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_63252784e4b0a51fef1bb2dc?product_id=p_63252784e4b0a51fef1bb2dc',
         desc: '',
         content: ``,
+        oPrice: 399,
+        price: 299,
       },
     })
 
@@ -87,7 +95,7 @@ async function main() {
       cover: 'React全栈进阶.png',
       oPrice: 899,
       price: 799,
-      url:'www.baidu.com',
+      url:'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_6402a238e4b07b0558395e96',
     },
   })
 
@@ -98,7 +106,7 @@ async function main() {
       desc: '这门课我会全面讲解 Nuxt3 核心知识，然后在后端开发方面做一个知识扩展，最后带大家完成一个完整的实战项目。',
       oPrice: 699,
       price: 599,
-      url:'www.baidu.com',
+      url:'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62a44620e4b01c509abcbcda?product_id=p_62a44620e4b01c509abcbcda',
     },
   })
   await prisma.course.create({
@@ -108,7 +116,7 @@ async function main() {
       desc: '这门课我会全面讲解 Nuxt3 核心知识，然后在后端开发方面做一个知识扩展，最后带大家完成一个完整的实战项目。',
       oPrice: 699,
       price: 599,
-      url:'www.baidu.com',
+      url:'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62b4e11be4b0a51feef6bb4f?product_id=p_62b4e11be4b0a51feef6bb4f',
     },
   })
 

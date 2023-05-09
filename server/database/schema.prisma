@@ -15,6 +15,8 @@ model Column {
   desc    String?
   content String? @db.Text
   url String?
+  price     Decimal?
+  oPrice    Decimal?
 }
 
 model Course {

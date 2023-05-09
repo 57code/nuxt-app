@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Column` ADD COLUMN `oPrice` DECIMAL(65, 30) NULL,
+    ADD COLUMN `price` DECIMAL(65, 30) NULL;
