@@ -14,6 +14,7 @@ model Column {
   cover   String
   desc    String?
   content String? @db.Text
+  url String?
 }
 
 model Course {
@@ -27,6 +28,7 @@ model Course {
   users     UsersOnCourses[]
   orders    Order[]
   Catalogue Catalogue[]
+  url String?
 }
 
 // 章节

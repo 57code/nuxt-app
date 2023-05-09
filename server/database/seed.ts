@@ -1,12 +1,11 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 async function main() {
-
-
   await prisma.column.create({
     data: {
-      title: '前端工程化',
-      cover: '前端工程化.png',
+      title: 'Docker部署与持续集成',
+      cover: 'Docker部署.png',
+      url: 'www.baidu.com',
       desc: '',
       content: ``,
     },
@@ -16,22 +15,7 @@ async function main() {
       data: {
         title: 'Node服务器端',
         cover: 'Node与服务器端.jpg',
-        desc: '',
-        content: ``,
-      },
-    })
-    await prisma.column.create({
-      data: {
-        title: 'Vue3组件库实战',
-        cover: 'Vue3组件库实战.png',
-        desc: '',
-        content: ``,
-      },
-    })
-    await prisma.column.create({
-      data: {
-        title: 'Vue源码全家桶',
-        cover: 'Vue源码全家桶.jpeg',
+        url: 'www.baidu.com',
         desc: '',
         content: ``,
       },
@@ -39,8 +23,19 @@ async function main() {
 
     await prisma.column.create({
       data: {
-        title: 'React全栈实战',
-        cover: 'React全栈进阶.png',
+        title: '前端工程化',
+        cover: '前端工程化.png',
+        url: 'www.baidu.com',
+        desc: '',
+        content: ``,
+      },
+    })
+
+    await prisma.column.create({
+      data: {
+        title: 'Webpack优化实战',
+        cover: 'webpack优化.jpeg',
+        url: 'www.baidu.com',
         desc: '',
         content: ``,
       },
@@ -88,107 +83,35 @@ async function main() {
 
   await prisma.course.create({
     data: {
-      title: 'Nuxt全栈开发',
-      cover: 'course-nuxt.png',
-      desc: '这门课我会全面讲解 Nuxt3 核心知识，然后在后端开发方面做一个知识扩展，最后带大家完成一个完整的实战项目。',
-      oPrice: 129,
-      price: 99,
-      detail: `这门课程共分五个模块：
-      模块一，将从渲染模式等基础概念出发，先扭转一些同学的固有思维，补充缺失知识；
-      模块二，结合个人博客案例，深入学习 Nuxt3 核心特性；
-      模块三，解决项目工程化问题，从扩展性、复用性等角度深入了解模块等框架进阶知识；
-      模块四，将为项目实战做准备，给大家讲解全栈知识，包括数据库设计、接口设计和开发，大家会接触并掌握 Apifox、Prisma 等前端比较时髦的新工具；
-      模块五，项目实战，我会带大家开发一个知识分享社区主题的全栈项目，包括了从接口开发，到前端开发，再到优化、部署和持续集成的全流程实战。
-      相信学习完本小册，会让你深入掌握 Nuxt3 的同时，还能全方位提升自己的知识深度和架构水平。`,
-      Catalogue: {
-        createMany: {
-          data: [
-            { title: '01开篇：课程介绍和安排', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '02上层框架最佳选择', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '03五种渲染模式', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '04快速创建首个nuxt项目', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '05文件路由和布局', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '06使用静态资源', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '07自动导入特性', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '08API路由', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '09数据获取', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '10状态管理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '11错误处理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '12常用配置和优化', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-          ],
-        },
-      },
+      title: 'React全栈实战',
+      cover: 'React全栈进阶.png',
+      oPrice: 899,
+      price: 799,
+      url:'www.baidu.com',
     },
   })
 
   await prisma.course.create({
     data: {
-      title: 'Nuxt全栈开发',
-      cover: 'course-nuxt.png',
+      title: 'Vue3组件库实战',
+      cover: 'Vue3组件库实战.png',
       desc: '这门课我会全面讲解 Nuxt3 核心知识，然后在后端开发方面做一个知识扩展，最后带大家完成一个完整的实战项目。',
-      oPrice: 129,
-      price: 99,
-      detail: `这门课程共分五个模块：
-      模块一，将从渲染模式等基础概念出发，先扭转一些同学的固有思维，补充缺失知识；
-      模块二，结合个人博客案例，深入学习 Nuxt3 核心特性；
-      模块三，解决项目工程化问题，从扩展性、复用性等角度深入了解模块等框架进阶知识；
-      模块四，将为项目实战做准备，给大家讲解全栈知识，包括数据库设计、接口设计和开发，大家会接触并掌握 Apifox、Prisma 等前端比较时髦的新工具；
-      模块五，项目实战，我会带大家开发一个知识分享社区主题的全栈项目，包括了从接口开发，到前端开发，再到优化、部署和持续集成的全流程实战。
-      相信学习完本小册，会让你深入掌握 Nuxt3 的同时，还能全方位提升自己的知识深度和架构水平。`,
-      Catalogue: {
-        createMany: {
-          data: [
-            { title: '01开篇：课程介绍和安排', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '02上层框架最佳选择', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '03五种渲染模式', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '04快速创建首个nuxt项目', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '05文件路由和布局', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '06使用静态资源', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '07自动导入特性', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '08API路由', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '09数据获取', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '10状态管理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '11错误处理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '12常用配置和优化', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-          ],
-        },
-      },
+      oPrice: 699,
+      price: 599,
+      url:'www.baidu.com',
     },
   })
   await prisma.course.create({
     data: {
-      title: 'Nuxt全栈开发',
-      cover: 'course-nuxt.png',
+      title: 'Vue源码全家桶',
+      cover: 'Vue源码全家桶.jpeg',
       desc: '这门课我会全面讲解 Nuxt3 核心知识，然后在后端开发方面做一个知识扩展，最后带大家完成一个完整的实战项目。',
-      oPrice: 129,
-      price: 99,
-      detail: `这门课程共分五个模块：
-      模块一，将从渲染模式等基础概念出发，先扭转一些同学的固有思维，补充缺失知识；
-      模块二，结合个人博客案例，深入学习 Nuxt3 核心特性；
-      模块三，解决项目工程化问题，从扩展性、复用性等角度深入了解模块等框架进阶知识；
-      模块四，将为项目实战做准备，给大家讲解全栈知识，包括数据库设计、接口设计和开发，大家会接触并掌握 Apifox、Prisma 等前端比较时髦的新工具；
-      模块五，项目实战，我会带大家开发一个知识分享社区主题的全栈项目，包括了从接口开发，到前端开发，再到优化、部署和持续集成的全流程实战。
-      相信学习完本小册，会让你深入掌握 Nuxt3 的同时，还能全方位提升自己的知识深度和架构水平。`,
-      Catalogue: {
-        createMany: {
-          data: [
-            { title: '01开篇：课程介绍和安排', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '02上层框架最佳选择', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '03五种渲染模式', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '04快速创建首个nuxt项目', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '05文件路由和布局', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '06使用静态资源', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '07自动导入特性', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '08API路由', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '09数据获取', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '10状态管理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '11错误处理', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-            { title: '12常用配置和优化', source: 'https://juejin.cn/video/7202149403342143520/section/7202885295820242947' },
-          ],
-        },
-      },
+      oPrice: 699,
+      price: 599,
+      url:'www.baidu.com',
     },
   })
+
   await prisma.course.create({
     data: {
       title: 'Nuxt全栈开发',
