@@ -14,7 +14,9 @@
     "lint:fix": "eslint . --fix",
     "test:unit": "vitest",
     "migrate": "npx prisma migrate dev --name init --schema server/database/schema.prisma",
-    "seed": "npx prisma db seed"
+    "seed": "npx prisma db seed",
+    "clear":"npx prisma migrate reset --schema server/database/schema.prisma"
+    
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",

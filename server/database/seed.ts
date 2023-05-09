@@ -1,150 +1,90 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 async function main() {
+
+
   await prisma.column.create({
     data: {
-      title: '上层框架最佳选择: Nuxt',
-      cover: 'column-nuxt.png',
-      desc: '上层框架最佳选择：Nuxt 是一个基于 Vue 的上层全栈通用框架，它提供了大量优秀特性提升开发效率和体验，因此是 Vue 栈上层框架的最佳选择之一。',
-      content: `开箱即用的开发环境
-      开发者对一款现代框架的一个重要要求就是开箱即用。在这方面 Nuxt 提供了如下能力：
-      
-      整合 Vue3 作为视图引擎；
-      整合 Webpack5 和 Vite 作为打包工具；
-      提供最新 ES 语法，零配置 TS 支持；
-      内置 vue-router，基于文件的路由；
-      内置 SSR 友好的全局状态管理模块；
-      内置数据访问模块 useFetch 等等。
-      良好的开发体验
-      良好的开发体验主要来源于效率工具和避免重复劳动，这方面我们看一下 Nuxt 提供的能力：
-      
-      基于文件的路由支持；
-      组件、依赖库、工具集的自动导入；
-      内置的数据获取模块和新的编程范式；
-      零配置的 TS 支持；
-      插件、模块、中间件等多种复用机制。
-      服务端能力
-      Nuxt 内置了 Nitro 服务端引擎，能够同时提供 SSR 和 API 路由支持，这也就是说，除了能够提供服务端渲染能力，我们还能编写服务端接口，这使我们拥有了全栈开发能力。另外 API 兼容 node、connect、express，未来也可以把应用发布到 Node.js、Serverless 等服务器运行环境。
-      
-      不同场景解决方案
-      为了满足开发者多种场景开发需求，Nuxt 提供了 5 种渲染模式：
-      
-      服务端渲染 SSR；
-      客户端渲染 SPA；
-      全静态内容生成 SSG；
-      混合渲染模式 Hybrid；
-      边缘渲染 Edge-render。
-      在后面章节中，我们也将给大家详细介绍这几种模式的异同和选择。`,
+      title: '前端工程化',
+      cover: '前端工程化.png',
+      desc: '',
+      content: ``,
     },
   })
-  await prisma.column.create({
-    data: {
-      title: '上层框架最佳选择: Nuxt',
-      cover: 'column-nuxt.png',
-      desc: '上层框架最佳选择：Nuxt 是一个基于 Vue 的上层全栈通用框架，它提供了大量优秀特性提升开发效率和体验，因此是 Vue 栈上层框架的最佳选择之一。',
-      content: `开箱即用的开发环境
-      开发者对一款现代框架的一个重要要求就是开箱即用。在这方面 Nuxt 提供了如下能力：
+
+    await prisma.column.create({
+      data: {
+        title: 'Node服务器端',
+        cover: 'Node与服务器端.jpg',
+        desc: '',
+        content: ``,
+      },
+    })
+    await prisma.column.create({
+      data: {
+        title: 'Vue3组件库实战',
+        cover: 'Vue3组件库实战.png',
+        desc: '',
+        content: ``,
+      },
+    })
+    await prisma.column.create({
+      data: {
+        title: 'Vue源码全家桶',
+        cover: 'Vue源码全家桶.jpeg',
+        desc: '',
+        content: ``,
+      },
+    })
+
+    await prisma.column.create({
+      data: {
+        title: 'React全栈实战',
+        cover: 'React全栈进阶.png',
+        desc: '',
+        content: ``,
+      },
+    })
+
+
+
+  // await prisma.column.create({
+  //   data: {
+  //     title: '上层框架最佳选择: Nuxt',
+  //     cover: 'column-nuxt.png',
+  //     desc: '上层框架最佳选择：Nuxt 是一个基于 Vue 的上层全栈通用框架，它提供了大量优秀特性提升开发效率和体验，因此是 Vue 栈上层框架的最佳选择之一。',
+  //     content: `开箱即用的开发环境
+  //     开发者对一款现代框架的一个重要要求就是开箱即用。在这方面 Nuxt 提供了如下能力：
       
-      整合 Vue3 作为视图引擎；
-      整合 Webpack5 和 Vite 作为打包工具；
-      提供最新 ES 语法，零配置 TS 支持；
-      内置 vue-router，基于文件的路由；
-      内置 SSR 友好的全局状态管理模块；
-      内置数据访问模块 useFetch 等等。
-      良好的开发体验
-      良好的开发体验主要来源于效率工具和避免重复劳动，这方面我们看一下 Nuxt 提供的能力：
+  //     整合 Vue3 作为视图引擎；
+  //     整合 Webpack5 和 Vite 作为打包工具；
+  //     提供最新 ES 语法，零配置 TS 支持；
+  //     内置 vue-router，基于文件的路由；
+  //     内置 SSR 友好的全局状态管理模块；
+  //     内置数据访问模块 useFetch 等等。
+  //     良好的开发体验
+  //     良好的开发体验主要来源于效率工具和避免重复劳动，这方面我们看一下 Nuxt 提供的能力：
       
-      基于文件的路由支持；
-      组件、依赖库、工具集的自动导入；
-      内置的数据获取模块和新的编程范式；
-      零配置的 TS 支持；
-      插件、模块、中间件等多种复用机制。
-      服务端能力
-      Nuxt 内置了 Nitro 服务端引擎，能够同时提供 SSR 和 API 路由支持，这也就是说，除了能够提供服务端渲染能力，我们还能编写服务端接口，这使我们拥有了全栈开发能力。另外 API 兼容 node、connect、express，未来也可以把应用发布到 Node.js、Serverless 等服务器运行环境。
+  //     基于文件的路由支持；
+  //     组件、依赖库、工具集的自动导入；
+  //     内置的数据获取模块和新的编程范式；
+  //     零配置的 TS 支持；
+  //     插件、模块、中间件等多种复用机制。
+  //     服务端能力
+  //     Nuxt 内置了 Nitro 服务端引擎，能够同时提供 SSR 和 API 路由支持，这也就是说，除了能够提供服务端渲染能力，我们还能编写服务端接口，这使我们拥有了全栈开发能力。另外 API 兼容 node、connect、express，未来也可以把应用发布到 Node.js、Serverless 等服务器运行环境。
       
-      不同场景解决方案
-      为了满足开发者多种场景开发需求，Nuxt 提供了 5 种渲染模式：
+  //     不同场景解决方案
+  //     为了满足开发者多种场景开发需求，Nuxt 提供了 5 种渲染模式：
       
-      服务端渲染 SSR；
-      客户端渲染 SPA；
-      全静态内容生成 SSG；
-      混合渲染模式 Hybrid；
-      边缘渲染 Edge-render。
-      在后面章节中，我们也将给大家详细介绍这几种模式的异同和选择。`,
-    },
-  })
-  await prisma.column.create({
-    data: {
-      title: '上层框架最佳选择: Nuxt',
-      cover: 'column-nuxt.png',
-      desc: '上层框架最佳选择：Nuxt 是一个基于 Vue 的上层全栈通用框架，它提供了大量优秀特性提升开发效率和体验，因此是 Vue 栈上层框架的最佳选择之一。',
-      content: `开箱即用的开发环境
-      开发者对一款现代框架的一个重要要求就是开箱即用。在这方面 Nuxt 提供了如下能力：
-      
-      整合 Vue3 作为视图引擎；
-      整合 Webpack5 和 Vite 作为打包工具；
-      提供最新 ES 语法，零配置 TS 支持；
-      内置 vue-router，基于文件的路由；
-      内置 SSR 友好的全局状态管理模块；
-      内置数据访问模块 useFetch 等等。
-      良好的开发体验
-      良好的开发体验主要来源于效率工具和避免重复劳动，这方面我们看一下 Nuxt 提供的能力：
-      
-      基于文件的路由支持；
-      组件、依赖库、工具集的自动导入；
-      内置的数据获取模块和新的编程范式；
-      零配置的 TS 支持；
-      插件、模块、中间件等多种复用机制。
-      服务端能力
-      Nuxt 内置了 Nitro 服务端引擎，能够同时提供 SSR 和 API 路由支持，这也就是说，除了能够提供服务端渲染能力，我们还能编写服务端接口，这使我们拥有了全栈开发能力。另外 API 兼容 node、connect、express，未来也可以把应用发布到 Node.js、Serverless 等服务器运行环境。
-      
-      不同场景解决方案
-      为了满足开发者多种场景开发需求，Nuxt 提供了 5 种渲染模式：
-      
-      服务端渲染 SSR；
-      客户端渲染 SPA；
-      全静态内容生成 SSG；
-      混合渲染模式 Hybrid；
-      边缘渲染 Edge-render。
-      在后面章节中，我们也将给大家详细介绍这几种模式的异同和选择。`,
-    },
-  })
-  await prisma.column.create({
-    data: {
-      title: '上层框架最佳选择: Nuxt',
-      cover: 'column-nuxt.png',
-      desc: '上层框架最佳选择：Nuxt 是一个基于 Vue 的上层全栈通用框架，它提供了大量优秀特性提升开发效率和体验，因此是 Vue 栈上层框架的最佳选择之一。',
-      content: `开箱即用的开发环境
-      开发者对一款现代框架的一个重要要求就是开箱即用。在这方面 Nuxt 提供了如下能力：
-      
-      整合 Vue3 作为视图引擎；
-      整合 Webpack5 和 Vite 作为打包工具；
-      提供最新 ES 语法，零配置 TS 支持；
-      内置 vue-router，基于文件的路由；
-      内置 SSR 友好的全局状态管理模块；
-      内置数据访问模块 useFetch 等等。
-      良好的开发体验
-      良好的开发体验主要来源于效率工具和避免重复劳动，这方面我们看一下 Nuxt 提供的能力：
-      
-      基于文件的路由支持；
-      组件、依赖库、工具集的自动导入；
-      内置的数据获取模块和新的编程范式；
-      零配置的 TS 支持；
-      插件、模块、中间件等多种复用机制。
-      服务端能力
-      Nuxt 内置了 Nitro 服务端引擎，能够同时提供 SSR 和 API 路由支持，这也就是说，除了能够提供服务端渲染能力，我们还能编写服务端接口，这使我们拥有了全栈开发能力。另外 API 兼容 node、connect、express，未来也可以把应用发布到 Node.js、Serverless 等服务器运行环境。
-      
-      不同场景解决方案
-      为了满足开发者多种场景开发需求，Nuxt 提供了 5 种渲染模式：
-      
-      服务端渲染 SSR；
-      客户端渲染 SPA；
-      全静态内容生成 SSG；
-      混合渲染模式 Hybrid；
-      边缘渲染 Edge-render。
-      在后面章节中，我们也将给大家详细介绍这几种模式的异同和选择。`,
-    },
-  })
+  //     服务端渲染 SSR；
+  //     客户端渲染 SPA；
+  //     全静态内容生成 SSG；
+  //     混合渲染模式 Hybrid；
+  //     边缘渲染 Edge-render。
+  //     在后面章节中，我们也将给大家详细介绍这几种模式的异同和选择。`,
+  //   },
+  // })
+  
 
   await prisma.course.create({
     data: {
@@ -283,6 +223,7 @@ async function main() {
       },
     },
   })
+  
 }
 main()
   .then(async () => {
