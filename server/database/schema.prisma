@@ -9,14 +9,14 @@ generator client {
 
 // 专栏
 model Column {
-  id      Int     @id @default(autoincrement())
+  id      Int      @id @default(autoincrement())
   title   String
   cover   String
   desc    String?
-  content String? @db.Text
-  url String?
-  price     Decimal?
-  oPrice    Decimal?
+  content String?  @db.Text
+  url     String?
+  price   Decimal?
+  oPrice  Decimal?
 }
 
 model Course {
@@ -30,7 +30,7 @@ model Course {
   users     UsersOnCourses[]
   orders    Order[]
   Catalogue Catalogue[]
-  url String?
+  url       String?
 }
 
 // 章节
