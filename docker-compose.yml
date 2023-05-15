@@ -35,8 +35,10 @@ services:
       DATABASE_URL: mysql://root:rootpassword@mysql_db_container:3306/ycxt
       NUXT_BASE_URL: https://jsonplaceholder.typicode.com
       JSON_SECRET: thisisjsonsecret
+    #command: >
+    #  /bin/sh -c 'npm run migrate && npm run build && npm start'
     command: >
-      /bin/sh -c 'npm run migrate && npm run build && npm start'
+     /bin/sh -c 'npm run clear && npm run migrate && npm run build && npm start'
     depends_on:
       mysql_db_container:
         condition: service_healthy
