@@ -28,8 +28,8 @@ async function main() {
     data: {
       title: '前端工程化',
       cover: '前端工程化.png',
-      url: 'www.baidu.com',
-      desc: 'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62b17adae4b07bd2d7b0af40?product_id=p_62b17adae4b07bd2d7b0af40',
+      url: 'https://appwhrkrsz84443.pc.xiaoe-tech.com/p/t_pc/goods_pc_detail/goods_detail/p_62b17adae4b07bd2d7b0af40?product_id=p_62b17adae4b07bd2d7b0af40',
+      desc: '',
       content: '',
       oPrice: 699,
       price: 599,
